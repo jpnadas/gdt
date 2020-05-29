@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# defaults
+DATABASE="default"
+FILE_LOGS="imports.json"
+
+# get input arguments
+while getopts 'd:f:' c
+do
+  case $c in
+    d) DATABASE=$OPTARG ;;
+    f) FILE_LOGS=$OPTARG ;;
+  esac
+done
+
+# Check if file containing which logs to load exists
+if [ ! -e $FILE_LOGS ]; then
+    echo "file $FILE_LOGS not found. Please specify which logs to load in a file. Did you forget the -f argument?"
+    exit
+fi
+
+# check if the log file is a valid json
+if [[ ! `cat $FILE_LOGS | jq -e` ]]; then
+    echo "file $FILE_LOGS is not a valid json file"
+    exit
+fi
+
+for row in `cat imports.json | jq -r '.[] | @base64'`; do
+    _jq() {
+        echo ${row} | base64 --decode | jq -r ${1}
+    }
+
+    FIELDS=`echo $(_jq '.fields[].name') | sed -e 's/\s/,/g'`
+ 
+    # echo $FIELDS
+
+    mongoimport \
+        -d $DATABASE \
+        -c $(_jq '.collection') \
+        --type tsv \
+        --file $(_jq '.file') \
+        --fields=$FIELDS
+
+done

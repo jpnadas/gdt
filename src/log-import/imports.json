@@ -1,0 +1,33 @@
+[
+    {
+        "file": "raw_data/DlRsrpSinrStats.txt",
+        "collection": "rsrp_sinr",
+        "fields": [
+            {"name": "time"},
+            {"name": "cell_id"},
+            {"name": "imsi"},
+            {"name": "rnti"},
+            {"name": "rsrp"},
+            {"name": "sinr"},
+            {"name": "cc_id"}
+        ]
+    },
+    {
+        "file": "raw_data/DlRxPhyStats.txt",
+        "collection": "dl_rx_phy_stats",
+        "fields": [
+            {"name": "time"},
+            {"name": "cell_id"},
+            {"name": "imsi"},
+            {"name": "rnti"},
+            {"name": "tx_mode"},
+            {"name": "layer"},
+            {"name": "mcs"},
+            {"name": "size"},
+            {"name": "rv"},
+            {"name": "ndi"},
+            {"name": "correct"},
+            {"name": "cc_id"}
+        ]
+    }
+]

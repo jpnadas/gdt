@@ -32,8 +32,6 @@ for row in `cat imports.json | jq -r '.[] | @base64'`; do
 
     FIELDS=`echo $(_jq '.fields[].name') | sed -e 's/\s/,/g'`
  
-    # echo $FIELDS
-
     mongoimport \
         -d $DATABASE \
         -c $(_jq '.collection') \

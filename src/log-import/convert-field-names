@@ -1,0 +1,22 @@
+#!/bin/sh
+
+head -n1 raw_data/UlSinrStats.txt\
+    | sed 's/^%\s//g'\
+    | sed 's/IMSI/imsi/g' \
+    | sed 's/CellId/cell_id/g' \
+    | sed 's/cellId/cell_id/g' \
+    | sed 's/ccId/cc_id/g' \
+    | sed 's/RNTI/rnti/g' \
+    | sed 's/LCID/lcid/g' \
+    | sed 's/nTxPDUs/n_tx_pdus/g' \
+    | sed 's/nRxPDUs/n_rx_pdus/g' \
+    | sed 's/TxBytes/tx_bytes/g' \
+    | sed 's/RxBytes/rx_bytes/g' \
+    | sed 's/stdDev/std_dev/g' \
+    | sed 's/PduSize/pdu_size/g' \
+    | sed 's/sinrLinear/sinr_linear/g' \
+    | sed 's/componentCarrierId/cc_id/g' \
+    | sed 's/\t/\n/g' \
+    | sed 's/^/{"name": "/g' \
+    | sed 's/$/"},/g' \
+    # | tr '[:upper:]' '[:lower:]'

@@ -13,6 +13,204 @@
         ]
     },
     {
+        "file": "raw_data/UlSinrStats.txt",
+        "collection": "ul_sinr_stats",
+        "fields": [
+            {"name": "time"},
+            {"name": "cell_id"},
+            {"name": "imsi"},
+            {"name": "rnti"},
+            {"name": "sinr_linear"},
+            {"name": "cc_id"}
+        ]
+    },
+    {
+        "file": "raw_data/UlTxPhyStats.txt",
+        "collection": "ul_tx_phy_stats",
+        "fields": [
+            {"name": "time"},
+            {"name": "cell_id"},
+            {"name": "imsi"},
+            {"name": "rnti"},
+            {"name": "layer"},
+            {"name": "mcs"},
+            {"name": "size"},
+            {"name": "rv"},
+            {"name": "ndi"},
+            {"name": "cc_id"}
+        ]
+    },
+    {
+        "file": "raw_data/UlRxPhyStats.txt",
+        "collection": "ul_rx_phy_stats",
+        "fields": [
+            {"name": "time"},
+            {"name": "cell_id"},
+            {"name": "imsi"},
+            {"name": "rnti"},
+            {"name": "layer"},
+            {"name": "mcs"},
+            {"name": "size"},
+            {"name": "rv"},
+            {"name": "ndi"},
+            {"name": "correct"},
+            {"name": "cc_id"}
+        ]
+    },
+    {
+        "file": "raw_data/UlRlcStats.txt",
+        "collection": "ul_rlc_stats",
+        "fields": [
+            {"name": "start"},
+            {"name": "end"},
+            {"name": "cell_id"},
+            {"name": "imsi"},
+            {"name": "rnti"},
+            {"name": "lcid"},
+            {"name": "n_tx_pdus"},
+            {"name": "tx_bytes"},
+            {"name": "n_rx_pdus"},
+            {"name": "rx_bytes"},
+            {"name": "delay"},
+            {"name": "std_dev_delay"},
+            {"name": "min_delay"},
+            {"name": "max_delay"},
+            {"name": "pdu_size"},
+            {"name": "std_dev_size"},
+            {"name": "min_size"},
+            {"name": "max_size"}
+        ]
+    },
+    {
+        "file": "raw_data/UlPdcpStats.txt",
+        "collection": "ul_pdcp_stats",
+        "fields": [
+            {"name": "start"},
+            {"name": "end"},
+            {"name": "cell_id"},
+            {"name": "imsi"},
+            {"name": "rnti"},
+            {"name": "lcid"},
+            {"name": "n_tx_pdus"},
+            {"name": "tx_bytes"},
+            {"name": "n_rx_pdus"},
+            {"name": "rx_bytes"},
+            {"name": "delay"},
+            {"name": "std_dev_delay"},
+            {"name": "min_delay"},
+            {"name": "max_delay"},
+            {"name": "pdu_size"},
+            {"name": "std_dev_size"},
+            {"name": "min_size"},
+            {"name": "max_size"}
+        ]
+    },
+    {
+        "file": "raw_data/UlMacStats.txt",
+        "collection": "ul_mac_stats",
+        "fields": [
+            {"name": "time"},
+            {"name": "cell_id"},
+            {"name": "imsi"},
+            {"name": "frame"},
+            {"name": "sframe"},
+            {"name": "rnti"},
+            {"name": "mcs"},
+            {"name": "size"},
+            {"name": "cc_id"}
+        ]
+    },
+    {
+        "file": "raw_data/UlInterferenceStats.txt",
+        "collection": "ul_interference_stats",
+        "fields": [
+            {"name": "time"},
+            {"name": "cell_id"},
+            {"name": "interference"}
+        ]
+    },
+    {
+        "file": "raw_data/DlTxPhyStats.txt",
+        "collection": "dl_tx_phy_stats",
+        "fields": [
+            {"name": "time"},
+            {"name": "cell_id"},
+            {"name": "imsi"},
+            {"name": "rnti"},
+            {"name": "layer"},
+            {"name": "mcs"},
+            {"name": "size"},
+            {"name": "rv"},
+            {"name": "ndi"},
+            {"name": "cc_id"}
+        ]
+    },
+    {
+        "file": "raw_data/DlRlcStats.txt",
+        "collection": "dl_rlc_stats",
+        "fields": [
+            {"name": "start"},
+            {"name": "end"},
+            {"name": "cell_id"},
+            {"name": "imsi"},
+            {"name": "rnti"},
+            {"name": "lcid"},
+            {"name": "n_tx_pdus"},
+            {"name": "tx_bytes"},
+            {"name": "n_rx_pdus"},
+            {"name": "rx_bytes"},
+            {"name": "delay"},
+            {"name": "std_dev_delay"},
+            {"name": "min_delay"},
+            {"name": "max_delay"},
+            {"name": "pdu_size"},
+            {"name": "std_dev_size"},
+            {"name": "min_size"},
+            {"name": "max_size"}
+        ]
+    },
+    {
+        "file": "raw_data/DlPdcpStats.txt",
+        "collection": "dl_pdcp_stats",
+        "fields": [
+            {"name": "start"},
+            {"name": "end"},
+            {"name": "cell_id"},
+            {"name": "imsi"},
+            {"name": "rnti"},
+            {"name": "lcid"},
+            {"name": "n_tx_pdus"},
+            {"name": "tx_bytes"},
+            {"name": "n_rx_pdus"},
+            {"name": "rx_bytes"},
+            {"name": "delay"},
+            {"name": "std_dev_delay"},
+            {"name": "min_delay"},
+            {"name": "max_delay"},
+            {"name": "pdu_size"},
+            {"name": "std_dev_size"},
+            {"name": "min_size"},
+            {"name": "max_size"}
+        ]
+    },
+    {
+        "file": "raw_data/DlMacStats.txt",
+        "collection": "dl_mac_stats",
+        "fields": [
+            {"name": "time"},
+            {"name": "cell_id"},
+            {"name": "imsi"},
+            {"name": "frame"},
+            {"name": "sframe"},
+            {"name": "rnti"},
+            {"name": "mcs_tb_1"},
+            {"name": "size_tb_1"},
+            {"name": "mcs_tb_2"},
+            {"name": "size_tb_2"},
+            {"name": "cc_id"}
+        ]
+    },
+    {
         "file": "raw_data/DlRxPhyStats.txt",
         "collection": "dl_rx_phy_stats",
         "fields": [

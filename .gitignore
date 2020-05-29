@@ -121,6 +121,5 @@ venv.bak/
 pip-selfcheck.json
 
 # End of https://www.gitignore.io/api/python,venv
-env37
 data
 raw_data

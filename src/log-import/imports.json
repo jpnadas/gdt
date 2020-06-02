@@ -1,7 +1,7 @@
 [
     {
         "file": "raw_data/DlRsrpSinrStats.txt",
-        "collection": "rsrp_sinr",
+        "collection": "dl_rsrp_sinr",
         "fields": [
             {"name": "time"},
             {"name": "cell_id"},

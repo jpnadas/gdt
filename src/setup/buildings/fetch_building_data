@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# Define the area you want to fetch buildings from.
+# since the earth is a sphere, you must be very careful 
+# with the corners, as it will get everthing outside your desired area
+# if you mess this up
+LATMIN=55.86754576669286
+LONMIN=-4.304816722869873
+
+LATMAX=55.8781155098914
+LONMAX=-4.282500743865967
+
+
+# Define the database name where you want to store the fetched data
+DATABASE_NAME=my_database
+
+# Fetch the data from OSM using the overpass API.
+wget -O buildings.osm 'http://overpass-api.de/api/interpreter?data=(node["building"="yes"]('$LATMIN,$LONMIN,$LATMAX,$LONMAX');way["building"="yes"]('$LATMIN,$LONMIN,$LATMAX,$LONMAX'););(._;>;);out body;'
+
+# # Convert it to json and import it to mongodb using mongoimport
+osmtogeojson buildings.osm | jq '.features[]' | mongoimport -d $DATABASE_NAME -c buildings
+

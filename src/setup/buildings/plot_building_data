@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Define the central coordinates for your projection.
+# You must use the same coordinates inside your NS3 simulation
+CENTRAL_LAT=55.86949625225858
+CENTRAL_LON=-4.286459782828637
+
+# Database name, must be the same used before
+DATABASE_NAME=my_database
+
+./convert_to_cartesian/convert_to_cartesian $CENTRAL_LAT $CENTRAL_LON $DATABASE_NAME
+
+python plot_buildings.py

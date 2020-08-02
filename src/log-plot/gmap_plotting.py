@@ -12,7 +12,7 @@ connect('test')
 gmap = gmplot.GoogleMapPlotter(center_lat=55.86939625225858,
                                 center_lng=-4.286459782828637,
                                 zoom=15,
-                                apikey="AIzaSyACVkJUq7akqU_9w3z0esdAjxKB_XK0E2Q")
+                                apikey="YOUR-API-KEY")
 
 with open('./results/lat_long_1ue.json') as json_file:
     data = json.load(json_file)

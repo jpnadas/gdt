@@ -41,6 +41,24 @@ Edit the script to configure the name of your database and also the area (in GPS
 #### Dependencies
 * Python 3 (Tested under 3.8)
 * matplotlib
+* jsoncpp
+* Geographic lib
+* mongocxx
+* bsoncxx
+* libmongoc
+
+#### Compilation
+Before plotting the building data, we must first compile a C++ code which reads from mongodb and writes to a json file.
+
+A file with the proper compilation flags is being provide (`clang_flags`). 
+You must adjust this to point it to the path of the libraries on your computer.
+
+Then, you can compile it with `clang++`, or your C++ compiler of choice.
+
+```
+clang++ convert_to_cartesian.cpp @clang_flags -o convert_to_cartesian
+```
+
 
 #### Usage
 
